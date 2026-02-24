@@ -1,15 +1,25 @@
 import com.orientacaoObjetos.entity.professor;
 
-public class OrientacaoAObjetos {
-    public static void main(String[] args) {
+import java.util.Scanner;
 
-        professor professor = new professor();
+public class OrientacaoAObjetos {
+    public static void main(String[] args) throws Exception {
+
+        Scanner input = new Scanner(System.in);
+
+        String nome;
+        int idade;
+
+        System.out.println("Informe seu nome: ");
+        nome = input.nextLine();
+
+        System.out.println("Informe a idade: ");
+        idade = input.nextInt();
+
+        professor professor = new professor(nome, idade);
 
         System.out.println(professor.nome);
-        System.out.println(professor.escola);
-        System.out.println(professor.materia);
+        System.out.println(professor.idade);
 
-        professor.lecionarmateria();
-        professor.finalizarMateria();
     }
 }

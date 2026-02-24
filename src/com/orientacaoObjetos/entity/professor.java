@@ -2,9 +2,15 @@ package com.orientacaoObjetos.entity;
 
 public class professor {
 
-    public String escola = "ebac";
-    public String nome = "carlos";
-    public String materia = "UX" ;
+    public String escola;
+    public String nome;
+    public String materia;
+    public int idade;
+
+    public professor(String nome, int idade) throws Exception{
+        this.nome = nome;
+        validacao(idade);
+    }
 
     public void lecionarmateria() {
 
@@ -21,6 +27,15 @@ public class professor {
     @Override
     public String toString() {
         return "nome " + nome + "\nescola " + escola + "\nmateria " + materia;
+    }
+
+    private void validacao(int idade) throws Exception{
+        if (idade < 18){
+            throw new Exception("A idade de " + idade + " é invalida");
+        }
+
+        this.idade = idade;
+
     }
 }
 
