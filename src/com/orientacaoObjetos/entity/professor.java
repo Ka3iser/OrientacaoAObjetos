@@ -7,6 +7,12 @@ public class professor {
     public String materia;
     public int idade;
 
+    public professor(String nome, int idade, String escola) throws Exception{
+        this.nome = nome;
+        validacao(idade);
+        this.escola = escola;
+    }
+
     public professor(String nome, int idade) throws Exception{
         this.nome = nome;
         validacao(idade);
