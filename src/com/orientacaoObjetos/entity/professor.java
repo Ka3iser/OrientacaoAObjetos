@@ -2,10 +2,10 @@ package com.orientacaoObjetos.entity;
 
 public class professor {
 
-    public String escola;
-    public String nome;
-    public String materia;
-    public int idade;
+    private String escola;
+    private String nome;
+    private String materia;
+    private int idade;
 
     public professor(String nome, int idade, String escola) throws Exception{
         this.nome = nome;
@@ -42,6 +42,30 @@ public class professor {
 
         this.idade = idade;
 
+    }
+
+    public String getEscola() {
+        return escola;
+    }
+
+    public void setEscola(String escola) {
+        this.escola = escola;
+    }
+
+    public String getNome() {
+        return  nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public String getMateria() {
+        return materia;
+    }
+
+    public void setMateria(String materia) {
+        this.materia = materia;
     }
 }
 

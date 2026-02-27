@@ -18,8 +18,8 @@ public class OrientacaoAObjetos {
 
         professor professor = new professor(nome, idade);
 
-        System.out.println(professor.nome);
-        System.out.println(professor.idade);
+        System.out.println(professor.getNome());
+        System.out.println(professor.getIdade());
 
     }
 }
