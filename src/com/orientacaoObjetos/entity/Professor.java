@@ -1,21 +1,21 @@
 package com.orientacaoObjetos.entity;
 
-public class professor {
+public class Professor {
 
     private String escola;
     private String nome;
     private String materia;
     private int idade;
 
-    public professor(String nome, int idade, String escola) throws Exception{
+    public Professor(String nome, int idade, String escola) throws Exception{
         this.nome = nome;
         validacao(idade);
         this.escola = escola;
     }
 
-    public professor(String nome, int idade) throws Exception{
+    public Professor(String nome, int idade) throws Exception{
         this.nome = nome;
-        validacao(idade);
+        this.idade = validacao(idade);
     }
 
     public void lecionarmateria() {
@@ -35,13 +35,12 @@ public class professor {
         return "nome " + nome + "\nescola " + escola + "\nmateria " + materia;
     }
 
-    private void validacao(int idade) throws Exception{
+    private int validacao(int idade) throws Exception{
         if (idade < 18){
             throw new Exception("A idade de " + idade + " é invalida");
         }
 
-        this.idade = idade;
-
+        return idade;
     }
 
     public String getEscola() {
@@ -58,6 +57,11 @@ public class professor {
 
     public int getIdade() {
         return idade;
+    }
+
+    public void setIdade(int idade) throws Exception {
+        this.idade = validacao(idade);
+
     }
 
     public String getMateria() {
